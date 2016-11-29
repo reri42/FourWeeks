@@ -46,6 +46,13 @@ public class FourWeekTest {
     }
 
     @Test
+    public void testVorige(){
+        VierWekelijksePeriode eerstePeriode2015 = VierWekelijksePeriode.getVierWekelijksePeriode(2015,1);
+        assertEquals(eerstePeriode2015.getVorige().getBeginPeriode(), new DateTime(2014,12,1,0,0));
+        assertEquals(VierWekelijksePeriode.getVierWekelijksePeriode(2016,1).getVorige().getBeginPeriode(), new DateTime(2015,11,30,0,0));
+    }
+
+    @Test
     public void testPeriodes(){
         for (int jaar= 2010; jaar <2021; jaar++){
             fourWeek.printPeriodes(jaar);

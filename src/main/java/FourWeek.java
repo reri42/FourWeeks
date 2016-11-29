@@ -27,9 +27,7 @@ public class FourWeek {
         if (periode == 13){
             eindePeriode = new DateTime(jaar, 12,31, 0,0);
         }
-        return new VierWekelijksePeriode(periode, beginPeriode, eindePeriode);
-
-
+        return new VierWekelijksePeriode(periode,jaar, beginPeriode, eindePeriode);
     }
 
     public DateTime getBegin4WekenPeriode(DateTime datumStart){
@@ -52,7 +50,7 @@ public class FourWeek {
 
     public void printPeriodes(int jaar){
         for (int periode = 1; periode <14; periode++){
-            System.out.println(getVierWekelijksePeriode(jaar, periode).toString());
+            System.out.println(VierWekelijksePeriode.getVierWekelijksePeriode(jaar, periode).toString());
         }
 
     }
